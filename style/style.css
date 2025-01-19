@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart {
+    position: relative;
+    width: 120px;
+    height: 108px;
+    background-color: red;
+    animation: pulse 3s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -60px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 60px;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.letters {
+    position: absolute;
+    top: 30px;
+    /* تغيير الموقع لجعل الحروف تظهر أعلى القلب */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+}
+
+.letter {
+    font-size: 80px;
+    font-weight: bold;
+    color: #333;
+}
+
+.letter-a {
+    margin-right: 5%;
+}
+
+.letter-m {
+    margin-left: 5%;
+    ;
+}
+
+.images {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    position: relative;
+    padding-top: 50px;
+}
+
+.image {
+    width: 200px;
+    height: 300px;
+    animation: move 3s infinite ease-in-out;
+}
+
+.image-left {
+    animation-name: move-left;
+}
+
+.image-right {
+    animation-name: move-right;
+}
+
+@keyframes move-left {
+    0% {
+        transform: translateX(-100px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100px);
+    }
+}
+
+@keyframes move-right {
+    0% {
+        transform: translateX(100px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .heart {
+        width: 100px;
+        height: 90px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 100px;
+        height: 100px;
+    }
+
+    .letter {
+        font-size: 80px;
+    }
+
+    .letters {
+        position: absolute;
+        top: 250px;
+        /* تغيير الموقع لجعل الحروف تظهر أعلى القلب */
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        text-align: center;
+    }
+
+    .image {
+        width: 80px;
+        height: 80px;
+    }
+
+    @keyframes move-left {
+        0% {
+            transform: translateX(-40px);
+        }
+
+        50% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-40px);
+        }
+    }
+
+    @keyframes move-right {
+        0% {
+            transform: translateX(40px);
+        }
+
+        50% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(40px);
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .heart {
+        width: 80px;
+        height: 72px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 80px;
+        height: 80px;
+    }
+
+    .letter {
+        font-size: 60px;
+    }
+
+    .letters {
+        position: absolute;
+        top: 300px;
+        /* تغيير الموقع لجعل الحروف تظهر أعلى القلب */
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        text-align: center;
+    }
+
+    .image {
+        width: 60px;
+        height: 60px;
+    }
+
+    @keyframes move-left {
+        0% {
+            transform: translateX(-50px);
+        }
+
+        50% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50px);
+        }
+    }
+
+    @keyframes move-right {
+        0% {
+            transform: translateX(50px);
+        }
+
+        50% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(50px);
+        }
+    }
+}
